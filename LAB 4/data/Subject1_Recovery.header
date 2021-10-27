@@ -1,0 +1,7 @@
+# Channels 5
+Sampling Rate 500
+Chan1 Resp Effort                          
+Chan2 Raw ECG Lead I                          
+Chan3 SpO2                          
+Chan4 Pulse Rate                       
+Chan5 ECG for HR Detection

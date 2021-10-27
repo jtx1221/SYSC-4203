@@ -1,0 +1,40 @@
+a = load('Subject1_Running.data');
+
+
+
+figure(1);
+ax(1) = subplot(4,1,1);
+plot(a(:,1)); 
+title('Respiratory Effort');
+
+ax(2) =subplot(4,1,2);
+plot (a(:,2)); 
+title('ECG');
+
+ax(3) = subplot(4,1,3);
+plot(a(:,3));
+title('SpO2');
+
+ax(4) = subplot(4,1,4);
+plot(a(:,4));
+title ('Pulse Rate');
+
+linkaxes(ax,'x');
+
+figure(2);
+[YUPPER1,YLOWER] = envelope (a(:,3), 1,'peak');
+[YUPPER2,YLOWER] = envelope (a(:,4), 1,'peak');
+
+bx(1) = subplot(2,1,1);
+plot(YUPPER1);
+title ('SpO2 Envelope');
+
+bx(2) = subplot(2,1,2);
+plot (YUPPER2);
+title ('Pulse Rate Envelope');
+
+linkaxes (bx, 'x');
+
+%sumdata1 = sum(YUPPER1,[10000:20000]);
+%avg1 = sumdata1 / 1000
+
